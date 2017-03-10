@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jando</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <meta name="robots" content="noindex" />
+    <link rel='shortcut icon' href='jimg/favicon.ico' type='image/x-icon'/>
+    <link rel="shortcut icon" href="jimg/icon.png" />
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="css/angular-material.min.css">
+    <link type="text/css" rel="stylesheet" href="css/angular-material.layouts.css">
+    <link type="text/css" rel="stylesheet" href="css/jando_main6.css">
+    <style>
+        @font-face {
+            font-family: clearSans;
+            src: url('./fonts/ClearSans-Regular.ttf');
+        }
+    </style>
+    <!--Clear Sans Font-->
+</head>
+
+<body ng-app="main_app" class="ng-cloak">
+    <div ng-controller="landing_controller" scrolldirective layout-fill layout="column" style="min-height: 100vh;" ng-cloak >
+
+        <div id="landing_top" style="min-height: 620px; margin-bottom:-20px" show-xs show-sm hide-gt-sm>
+
+            <md-toolbar class="toolbar-style1" ng-style="headerstyle">
+                <img src="jimg/logo-badly-cut.svg" alt=""><center><span style="position:relative; top: -20px; font-size:20px;"><a href="/arabic.html" style="color:#333333; text-decoration: none;">عربي</a></span></center>
+            </md-toolbar>
+
+            <!-- Logo -->
+            <!-- <center>
+                <img src="jimg/logo-badly-cut.svg" alt="">
+            </center> -->
+
+            <!-- Individual/ Business -->
+            <!-- <div flex layout="row" layout-align="center" style="margin-top: 120px;">
+                <md-button class="btn-land1">Individual</md-button>
+                <a ng-href="https://business.jando.com/">
+                    <md-button ng-class="{'btn-land2' : headertransparent, 'btn-land2b' : !headertransparent}" >Business</md-button>
+                </a>
+            </div> -->
+
+            <!-- 3 Icons -->
+            <div flex layout="row" class="md-padding" layout-align="center" style="margin-top: 150px;">
+                <div flex-gt-sm="10" layout="column" style="margin: 10px;">
+                    <center><img src="jimg/svg/icon_line_i_1.svg" alt="" data-pin-nopin="true" class="landing-icon-xs"></center>
+                    <center><span class="landing-icon-font1b">All you need is a mobile number</span></center>
+                </div>
+                <div flex-gt-sm="10" layout="column" style="margin: 10px;">
+                    <center><img src="jimg/svg/icon_line_i_2.svg" alt="" data-pin-nopin="true" class="landing-icon-xs"></center>
+                    <center><span class="landing-icon-font2b">Send money to Family</span></center>
+                </div>
+                <div flex-gt-sm="10" layout="column" style="margin: 10px;">
+                    <center><img src="jimg/svg/icon_line_i_3.svg" alt="" data-pin-nopin="true" class="landing-icon-xs"></center>
+                    <center><span class="landing-icon-font3b">Fund with cash and spend online</span></center>
+                </div>
+            </div>
+            <span flex><br><br></span>
+        </div>
+
+
+        <div  hide-xs hide-sm show-gt-sm>
+            <md-toolbar class="toolbar-style" ng-style="headerstyle">
+                <div class="md-toolbar-tools row">
+                    <a href="/index.html" class="nav-text" style="cursor:pointer; margin-top: -15px;" ng-style="headertextstyle" ><img src="jimg/logo-badly-cut.svg" alt="" data-pin-nopin="true" class="landing-toolbar-icon"></a>
+                    <span flex></span>
+                        <a ng-click="toGap()" class="nav-text" style="cursor:pointer; margin-left:-23px;" ng-style="headertextstyle" >Why Jando</a>
+                        <a ng-click="toHow()" class="nav-text" style="cursor:pointer;" ng-style="headertextstyle" >How it works</a>
+                        <a ng-click="toWhere()" class="nav-text" style="cursor:pointer;" ng-style="headertextstyle" >Find us</a>
+                        <a ng-click="toContact()" class="nav-text" style="cursor:pointer;" ng-style="headertextstyle" >Contact us</a>
+
+                    <span flex></span>
+                    <a href="/arabic.html" class="nav-text" style="cursor:pointer; margin-top: -15px;" ng-style="headertextstyle" ><img src="img/jando_arabic_logo_small.png" alt="" data-pin-nopin="true" class="landing-toolbar-icon" style="width: 85%; height: 85%"></a>
+                </div>
+            </md-toolbar>
+
+
+            <div id="landing_top" style="min-height: 120vh; margin-bottom:-20vh" du-scroll-container>
+                <div flex>
+                    <br/>&nbsp;
+                    <br/>&nbsp;
+                    <center>
+                        <p class="landing-header" style="color:#fff">Payments. For Everyone.</p>
+                    </center>
+                </div>
+                <div flex layout="row" layout-sm="column" layout-xs="column" class="md-padding" layout-align="center" style="margin-top: -15px;">
+                    <div flex-gt-sm="15" layout="column" style="margin: 15px;">
+                        <center><img src="jimg/svg/icon_line_i_1.svg" alt="" data-pin-nopin="true" class="landing-icon"></center>
+                        <center><span class="landing-icon-font1">All you need is a <br/>mobile number</span></center>
+                    </div>
+                    <div flex-gt-sm="15" layout="column" style="margin: 15px;">
+                        <center><img src="jimg/svg/icon_line_i_2.svg" alt="" data-pin-nopin="true" class="landing-icon"></center>
+                        <center><span class="landing-icon-font2">Send money to <br/>Family</span></center>
+                    </div>
+                    <div flex-gt-sm="15" layout="column" style="margin: 15px;">
+                        <center><img src="jimg/svg/icon_line_i_3.svg" alt="" data-pin-nopin="true" class="landing-icon"></center>
+                        <center><span class="landing-icon-font3">Fund with cash <br/>and spend online</span></center>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <center>
+                <a ng-click="toGap()" class="nav-text" style="cursor:pointer; margin-left: 50px;" ng-style="headertextstyle" ><img src="img/down_arrow.png" alt="" data-pin-nopin="true" class="landing-toolbar-icon" style="width: 3%; height: 3%"></a></center>
+            </div>
+        </div>
+
+
+        <!--  -->
+        <!-- container -->
+        <!--  -->
+        <div id="container" du-scroll-container >
+            <div id="gapTo" flex>
+                <!-- <div style="background-color: #00bfff;" show-xs show-sm hide-gt-sm flex> -->
+                <div class="section-background-image6c" show-xs show-sm hide-gt-sm flex>
+                    <div flex layout="row" layout-sm="row" layout-xs="column">
+                        <div flex layout="column" flex-gt-md="33" class="section-padding">
+                            <div layout="row">
+                                <span class="section-heading">The problem</span>
+                            </div>
+                            <div layout="column" style="margin-top: -5px">
+                                <p class="section-paragraph">Many people do not have a bank account or access to credit cards.</p>
+                                <p class="section-paragraph" style="margin-top: -5px">This limits their ability to shop online and offline. To send and receive money between family. To be connected to the world... </p>
+                            </div>
+                            <div layout="row">
+                                <span class="section-heading">The solution</span>
+                            </div>
+                            <div layout="column" style="margin-top: -5px">
+                                <p class="section-paragraph">Jando understands our consumers' needs and bridges the gap - empowering you with the Jando Card. Connecting you to the e-commerce world </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-background-image6" hide-xs hide-sm flex >
+                    <div flex layout="row" layout-sm="column" layout-xs="column">
+                        <div flex layout="column" flex-gt-md="33" class="section-padding">
+                            <div layout="row">
+                                <span class="section-heading">The problem</span>
+                            </div>
+                            <div layout="column" style="margin-top: -5px">
+                                <p class="section-paragraph">Many people do not have a bank account or access to credit cards.</p>
+                                <p class="section-paragraph" style="margin-top: -5px">This limits their ability to shop online and offline. To send and receive money between family. To be connected to the world... </p>
+                            </div>
+                        </div>
+                        <div flex layout="column" flex-gt-md="33" class="section-padding">
+                            <!-- <img src="jimg/svg/icon_bridge.svg" alt="jando bridges the gap" data-pin-nopin="true" class="section-image"> -->
+                        </div>
+                        <div flex layout="column" flex-gt-md="33" class="section-padding">
+                            <div layout="row">
+                                <span class="section-heading">The solution</span>
+                            </div>
+                            <div layout="row" style="margin-top: -5px">
+                                <p class="section-paragraph">Jando understands our consumers' needs and bridges the gap - empowering you with the Jando Card. Connecting you to the e-commerce world </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div  id="howTo" flex>  <!-- IE layout="column" -->
+                <div flex layout="column" class="md-padding">
+                </div>
+                <center>
+                    <p class="section-heading2">How does it work? It's really simple</p>
+                </center>
+                <div flex layout="row" layout-sm="column" layout-xs="column" class="md-padding" style="margin-top: -30px">
+                    <div flex-gt-sm="25" layout="column" class="md-padding">
+                        <center><img src="jimg/svg/icon_lrg_i_1.svg" alt="" data-pin-nopin="true" class="section-icon"></center>
+                        <center><span class="landing-icon-font">Sign up in-store or online <br/>for a Jando account.</span></center>
+                    </div>
+                    <div flex-gt-sm="25" layout="column" class="md-padding">
+                        <center><img src="jimg/svg/icon_lrg_i_2.svg" alt="" data-pin-nopin="true" class="section-icon"></center>
+                        <center><span class="landing-icon-font">Fund it using cash or with a variety<br/> of other convenient methods.</span></center>
+                    </div>
+                    <div flex-gt-sm="25" layout="column" class="md-padding">
+                        <center><img src="jimg/svg/icon_lrg_i_3.svg" alt="" data-pin-nopin="true" class="section-icon"></center>
+                        <center><span class="landing-icon-font">Receive your virtual and/or <br/>physical Jando card.</span></center>
+                    </div>
+                    <div flex-gt-sm="25" layout="column" class="md-padding">
+                        <center><img src="jimg/svg/icon_lrg_i_4.svg" alt="" data-pin-nopin="true" class="section-icon"></center>
+                        <center><span class="landing-icon-font">Spend and make payments worldwide. Send money to Family.</span></center>
+                    </div>
+                </div>
+                <span flex><br><br><br></span>
+            </div>
+            <div flex layout="row" show-xs show-sm hide-gt-sm flex>  <!-- IE layout-sm="column" layout-xs="column" -->
+                <div flex flex-gt-md="50" class="section-background-image2 ">
+                    <div flex class="section-padding" layout-align="center center"> <!-- IE layout="column" -->
+                        <p class="section-heading2" >The options are endless</p>
+                        <md-list flex>
+                            <md-list-item class="md-1-line">
+                                <img ng-src="jimg/svg/icon_sml_i_1.svg" class="md-avatar" alt="alt image text" />
+                                <div class="md-list-item-text">
+                                    <p style="font-size: 18px;">Easy Cash funding at participating locations</p>
+                                </div>
+                            </md-list-item>
+                            <md-list-item class="md-1-line">
+                                <img ng-src="jimg/svg/icon_sml_b_1.svg" class="md-avatar" alt="alt image text" />
+                                <div class="md-list-item-text">
+                                    <p style="font-size: 18px;">No bank account or smartphone needed</p>
+                                </div>
+                            </md-list-item>
+                            <md-list-item class="md-1-line">
+                                <img ng-src="jimg/svg/icon_sml_b_2.svg" class="md-avatar" alt="alt image text" />
+                                <div class="md-list-item-text">
+                                    <p style="font-size: 18px;">Quick and Simple - Instant Virtual Card Issuing</p>
+                                </div>
+                            </md-list-item>
+                            <md-list-item class="md-1-line">
+                                <img ng-src="jimg/svg/icon_sml_b_3.svg" class="md-avatar" alt="alt image text" />
+                                <div class="md-list-item-text">
+                                    <p style="font-size: 18px;">Physical card with added benefits and features</p>
+                                </div>
+                            </md-list-item>
+                            <md-list-item class="md-1-line">
+                                <img ng-src="jimg/svg/icon_sml_b_4.svg" class="md-avatar" alt="alt image text" />
+                                <div class="md-list-item-text">
+                                    <p style="font-size: 18px;">Use at millions of shops worldwide, online and offline</p>
+                                </div>
+                            </md-list-item>
+                            <md-list-item class="md-1-line">
+                                <img ng-src="jimg/svg/icon_sml_b_5.svg" class="md-avatar" alt="alt image text" />
+                                <div class="md-list-item-text">
+                                    <p style="font-size: 18px;">Send and receive money to/from family</p>
+                                </div>
+                            </md-list-item>
+                        </md-list>
+                    </div>
+                </div>
+            </div>
+
+            <div flex layout="row" hide-xs hide-sm show-gt-sm flex>  <!-- IE layout-sm="column" layout-xs="column" -->
+                <div flex flex-gt-md="50" class="section-background-image2 ">
+                    <div flex class="section-padding" layout-align="center center"> <!-- IE layout="column" -->
+                        <center><p class="section-heading2" >The options are endless</p></center>
+                        <md-list flex>
+                            <md-list-item class="md-1-line">
+                                <img ng-src="jimg/svg/icon_sml_i_1.svg" class="md-avatar" alt="alt image text" />
+                                <div class="md-list-item-text">
+                                    <p style="font-size: 18px;">Easy Cash funding at participating locations</p>
+                                </div>
+                            </md-list-item>
+                            <md-list-item class="md-1-line">
+                                <img ng-src="jimg/svg/icon_sml_b_1.svg" class="md-avatar" alt="alt image text" />
+                                <div class="md-list-item-text">
+                                    <p style="font-size: 18px;">No bank account or smartphone needed</p>
+                                </div>
+                            </md-list-item>
+                            <md-list-item class="md-1-line">
+                                <img ng-src="jimg/svg/icon_sml_b_2.svg" class="md-avatar" alt="alt image text" />
+                                <div class="md-list-item-text">
+                                    <p style="font-size: 18px;">Quick and Simple - Instant Virtual Card Issuing</p>
+                                </div>
+                            </md-list-item>
+                            <md-list-item class="md-1-line">
+                                <img ng-src="jimg/svg/icon_sml_b_3.svg" class="md-avatar" alt="alt image text" />
+                                <div class="md-list-item-text">
+                                    <p style="font-size: 18px;">Physical card with added benefits and features</p>
+                                </div>
+                            </md-list-item>
+                            <md-list-item class="md-1-line">
+                                <img ng-src="jimg/svg/icon_sml_b_4.svg" class="md-avatar" alt="alt image text" />
+                                <div class="md-list-item-text">
+                                    <p style="font-size: 18px;">Use at millions of shops worldwide, online and offline</p>
+                                </div>
+                            </md-list-item>
+                            <md-list-item class="md-1-line">
+                                <img ng-src="jimg/svg/icon_sml_b_5.svg" class="md-avatar" alt="alt image text" />
+                                <div class="md-list-item-text">
+                                    <p style="font-size: 18px;">Send and receive money to/from family</p>
+                                </div>
+                            </md-list-item>
+                        </md-list>
+                    </div>
+                </div>
+                <div flex flex-gt-md="50" class="section-background-image"> <!-- IE layout="column" -->
+                </div>
+            </div>
+
+
+            <!--  -->
+            <!-- whereTo -->
+            <!--  -->
+            <div id="whereTo2" style="background-color: #00bfff;" show-xs show-sm hide-gt-sm flex> <!-- IE layout="column" -->
+                <span flex><br></span>
+                <div > <!-- IE layout="column" -->
+                    <center><span class="landing-section-heading3">Where to find Jando?</span></center>
+                    <br>
+                    <center>
+                        <p class="landing-section-font5">For your convenience there are many ways </p>
+                        <p class="landing-section-font5">to open and fund your Jando account.</p>
+                        <br>
+                        <img ng-src="jimg/svg/icon_num_1.svg" alt="alt image text" class="num-icon" />
+                        <p class="landing-section-font5">You can open your
+                            <br> Jando account <b>online</b> today.</p>
+                        <br>
+                        <div flex layout="row" layout-align="center">
+                            <md-button class="btn2" ng-click="toContact()"><b>Join Now</b></md-button>
+                        </div>
+                        <br>
+                        <img ng-src="jimg/svg/txt_or.svg" alt="alt image text" class="or-text" />
+                        <br>
+                        <img ng-src="jimg/svg/icon_num_2.svg" alt="alt image text" class="num-icon" style="flex-shrink: 0"/>
+                        <p class="landing-section-font5"><b>Visit any of the participating <br> locations near you.</b></p>
+                        <img ng-src="jimg/svg/icon_arrow_right.svg" alt="alt image text" class="num-icon" />
+                        <br>
+                    </center>
+                </div>
+            </div>
+
+
+            <div id="whereTo"  class="section-background-image3 " hide-xs hide-sm flex> <!-- IE layout="column" -->
+                <span flex><br></span>
+                <div flex layout="row" class="section-padding">
+                    <div flex-gt-md="33"> <!-- IE layout="column" -->
+                        <center><span class="landing-section-heading3">Where to find Jando?</span></center>
+                        <br>
+                        <center>
+                            <p class="landing-section-font5">For your convenience there are many ways </p>
+                            <p class="landing-section-font5">to open and fund your Jando account.</p>
+                            <br>
+                            <img ng-src="jimg/svg/icon_num_1.svg" alt="alt image text" class="num-icon" />
+                            <p class="landing-section-font5">You can open your
+                                <br> Jando account <b>online</b> today.</p>
+                            <br>
+                            <div flex layout="row" layout-align="center">
+                                <!-- <md-button class="btn2"><b>Join Now</b></md-button> -->
+                                <a>
+                                    <md-button class="btn2" ng-click="toContact()"><b>Join Now</b>
+                                    </md-button>
+                                </a>
+                            </div>
+                            <br>
+                            <img ng-src="jimg/svg/txt_or.svg" alt="alt image text" class="or-text" />
+                            <br>
+                            <img ng-src="jimg/svg/icon_num_2.svg" alt="alt image text" class="num-icon" />
+                            <p class="landing-section-font5"><b>Visit any of the participating <br> locations near you.</b></p>
+                            <!-- <img ng-src="jimg/svg/icon_arrow_right.svg" alt="alt image text" class="num-icon" /> -->
+                            <br>
+                        </center>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="section-background-image4 " id="contactTo" flex> <!-- IE layout="column" -->
+                <span flex><br></span>
+                <div flex class="section-padding" layout-align="center center" show-gt-sm hide-sm hide-xs> <!-- IE layout="column" -->
+                    <div style="margin: 30px;"> <!-- IE layout="column" -->
+                        <center><span class="landing-section-heading3">Get in contact</span></center>
+                    </div>
+                    <center>
+                        <p class="landing-section-font5">We want to hear from you. Contact us directly at <b>info@jando.com</b></p>
+                        <p class="landing-section-font5">or fill out the form and we will get back to you.</p>
+                    </center>
+                    <form name="userForm">
+                        <div layout-gt-sm="row" style="padding-left: 25%">
+                            <md-input-container class="md-icon-float md-block" flex-gt-sm style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                                <!-- Use floating label instead of placeholder -->
+                                <label>Full name</label>
+                                <md-icon md-svg-src="jimg/svg/icon_form_name.svg" class="name"></md-icon>
+                                <input type="text" ng-model="ui.name" style="max-width:70%; color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                            </md-input-container>
+                        </div>
+                        <br/>
+                        <div layout-gt-sm="row" style="padding-left: 25%">
+                            <md-input-container class="md-icon-float md-block" flex-gt-sm style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                                <label>Email</label>
+                                <md-icon md-svg-src="jimg/svg/icon_form_email.svg" class="name"></md-icon>
+                                <input name="email" ng-model="ui.email" style="max-width:50%; color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);"/>
+                            </md-input-container>
+                            <br/>
+                            <md-input-container class="md-icon-float md-block" flex-gt-sm style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1); margin-left:-25%">
+                                <label>Phone Number</label>
+                                <md-icon md-svg-src="jimg/svg/icon_form_number.svg" class="name"></md-icon>
+                                <input name="phone" ng-model="ui.phone" style="max-width:50%; color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);"/>
+                            </md-input-container>
+                        </div>
+                        <br/>
+                        <div layout-gt-sm="row" style="padding-left: 25%">
+                            <md-input-container class="md-block" flex-gt-sm style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                                <!-- Use floating label instead of placeholder -->
+                                <label>Write your message</label>
+                                <input type="text" ng-model="ui.message" style="max-width:72%; color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                            </md-input-container>
+                        </div>
+                        <br/>
+                    </form>
+                    <div flex layout="row" layout-align="center" style="margin-bottom: 25px">
+                        <md-button class="btn3" ng-click="button_send()"><b>Send</b></md-button>
+                    </div>
+                </div>
+
+                <div flex class="section-padding" layout-align="center center" hide-gt-sm show-sm show-xs> <!-- IE layout="column" -->
+                    <div style="margin: 30px;"> <!-- IE layout="column" -->
+                        <center><span class="landing-section-heading3">Get in contact</span></center>
+                    </div>
+                    <center>
+                        <p class="landing-section-font5">We want to hear from you. Contact us directly at <b>info@jando.com</b></p>
+                        <p class="landing-section-font5">or fill out the form and we will get back to you.</p>
+                    </center>
+                    <center>
+                        <form name="userForm">
+                            <div layout-gt-sm="row" style="margin-left: 5%;">
+                                <md-input-container class="md-icon-float md-block" flex-gt-sm style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                                    <!-- Use floating label instead of placeholder -->
+                                    <label>Full name</label>
+                                    <md-icon md-svg-src="jimg/svg/icon_form_name.svg" class="name"></md-icon>
+                                    <input type="text" ng-model="ui.name" style="max-width:90%; color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                                </md-input-container>
+                            </div>
+                            <br/>
+                            <div layout-gt-sm="row" style="padding-left: 5%;">
+                                <md-input-container class="md-icon-float md-block" flex-gt-sm style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                                    <label>Email</label>
+                                    <md-icon md-svg-src="jimg/svg/icon_form_email.svg" class="name"></md-icon>
+                                    <input name="email" ng-model="ui.email" style="max-width:90%; color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);"/>
+                                </md-input-container>
+                            </div>
+                            <div layout-gt-sm="row" style="padding-left: 5%;">
+                                <br/>
+                                <md-input-container class="md-icon-float md-block" flex-gt-sm style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                                    <label>Phone Number</label>
+                                    <md-icon md-svg-src="jimg/svg/icon_form_number.svg" class="name"></md-icon>
+                                    <input name="phone" ng-model="ui.phone" style="max-width:90%; color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);"/>
+                                </md-input-container>
+                            </div>
+                            <br/>
+                            <div layout-gt-sm="row" style="padding-left: 5%;">
+                                <md-input-container class="md-block" flex-gt-sm style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                                    <!-- Use floating label instead of placeholder -->
+                                    <label>Write your message</label>
+                                    <input type="text" ng-model="ui.message" style="max-width:90%; color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                                </md-input-container>
+                            </div>
+                            <br/>
+                        </form>
+                    </center>
+                    <div flex layout="row" layout-align="center" style="margin-bottom: 25px;">
+                        <md-button class="btn3" ng-click="button_send()"><b>Send</b></md-button>
+                    </div>
+                </div>
+
+                <md-divider inset></md-divider>
+                <!-- <div>
+                    <p></p>
+                </div> -->
+
+                <md-toolbar md-scroll-shrink ng-if="true" class="transparent" hide-xs>
+                    <div class="md-toolbar-tools">
+                        <p class="footer-text"><span>&copyJando.com 2016   &nbsp;  JANDO INTERNATIONAL LTD. &nbsp; 10 Patron Street, Larnaca 6051, Cyprus &nbsp;&nbsp; Tel: +44 (0) 203 034 0080</span> </p>
+                        <span flex></span>
+                        <md-button class="md-icon-button" aria-label="More">
+                            <!-- <md-icon md-svg-icon="jimg/svg/icon_social_fb.svg"></md-icon> -->
+                        </md-button>
+                        <md-button class="md-icon-button" aria-label="More">
+                            <!-- <md-icon md-svg-icon="jimg/svg/icon_social_inst.svg"></md-icon> -->
+                        </md-button>
+                    </div>
+                </md-toolbar>
+
+
+
+                <md-toolbar md-scroll-shrink ng-if="true" class="transparent" layout-xs="column" show-xs hide-gt-xs> <!-- IE layout-xs="column" -->
+                    <center>
+                        <p class="footer-text">
+                            <span>
+                                <!-- <a ng-href="tandc.html" style="text-decoration: none; color: inherit;">
+                                    Terms & Conditions
+                                </a> -->
+                            </span>
+                            <br/>
+                            <span>
+                                <!-- <a ng-href="privacy_policy.html" style="text-decoration: none; color: inherit;">
+                                    Privacy Policy
+                                </a> -->
+                            </span>
+                            <br/>
+                            <span>
+                                &copy;Jando.com 2016 &nbsp;  JANDO INTERNATIONAL LTD. &nbsp; 10 Patron Street, Larnaca 6051, Cyprus &nbsp;&nbsp; Tel: +44 (0) 203 034 0080   
+                            </span>
+                            <br/>
+                            <br/>
+                            <span>
+                                <!-- <md-icon md-svg-icon="jimg/svg/icon_social_fb.svg"></md-icon> -->
+                            </span>
+                            &nbsp;
+                            &nbsp;
+                            <span>
+                                <!-- <md-icon md-svg-icon="jimg/svg/icon_social_inst.svg"></md-icon> -->
+                            </span>
+                        </p>
+                    </center>
+                </md-toolbar>
+            </div>
+            <div  class="section-background-image5 " flex> <!-- IE layout="column" -->
+                <span flex><br><br></span>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="lib/angular.min.js"></script>
+    <script type="text/javascript" src="lib/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="lib/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="lib/angular-material/angular-material.min.js"></script>
+    <script type="text/javascript" src="lib/angular-route.min.js"></script>
+    <script type="text/javascript" src="lib/angular-scroll.js"></script>
+    <script type="text/javascript" src="lib/moment.min.js"></script>
+    <script type="text/javascript" src='lib/lodash.underscore.min.js'></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/lookups.js"></script>
+    <script type="text/javascript" src="src/landing/landing2.js"></script>
+
+</body>
+
+</html>

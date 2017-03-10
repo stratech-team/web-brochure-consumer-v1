@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100%" height="100%" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 9.88222 9.88222"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str2 {stroke:#99F707;stroke-width:0.28222;stroke-linecap:round;stroke-linejoin:round}
+    .str0 {stroke:#99F708;stroke-width:0.28222}
+    .str1 {stroke:#99F708;stroke-width:0.28222;stroke-linecap:round;stroke-linejoin:round}
+    .fil1 {fill:none}
+    .fil3 {fill:#99F707}
+    .fil0 {fill:white}
+    .fil2 {fill:#99F708}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <circle class="fil0 str0" cx="4.94111" cy="4.94111" r="4.8"/>
+  <rect class="fil1 str1" x="3.14111" y="2.85737" width="3.6" height="5.4" rx="0.31897" ry="0.31897"/>
+  <rect class="fil1 str1" x="3.74111" y="4.35737" width="2.4" height="0.9"/>
+  <g id="_139926688">
+   <circle id="_124347096" class="fil2" cx="4.06121" cy="5.88577" r="0.3284"/>
+   <circle id="_124347840" class="fil2" cx="4.93694" cy="5.88577" r="0.3284"/>
+   <circle id="_124443376" class="fil2" cx="5.81268" cy="5.88577" r="0.3284"/>
+   <circle id="_124443232" class="fil2" cx="4.06121" cy="6.7615" r="0.3284"/>
+   <circle id="_123151104" class="fil2" cx="4.93694" cy="6.7615" r="0.3284"/>
+   <circle id="_124442296" class="fil2" cx="5.81268" cy="6.7615" r="0.3284"/>
+   <circle id="_139927360" class="fil2" cx="4.06121" cy="7.62897" r="0.3284"/>
+   <circle id="_139931584" class="fil2" cx="4.93694" cy="7.62897" r="0.3284"/>
+   <circle id="_137322944" class="fil2" cx="5.81268" cy="7.62897" r="0.3284"/>
+  </g>
+  <path class="fil0 str2" d="M6.29111 1.91636l0 1.8718 -2.7 0 0 -1.8718c0,-0.12375 0.10125,-0.225 0.225,-0.225l2.25 0c0.12375,0 0.225,0.10125 0.225,0.225z"/>
+  <rect class="fil3" transform="matrix(3.97268E-014 0.776591 -1.5 2.05676E-014 5.84111 1.69136)" width="2.7" height="0.3"/>
+ </g>
+</svg>

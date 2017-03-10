@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jando</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <meta name="robots" content="noindex" />
+    <link rel='shortcut icon' href='jimg/favicon.ico' type='image/x-icon'/>
+    <link rel="shortcut icon" href="jimg/icon.png" />
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="css/angular-material.min.css">
+    <link type="text/css" rel="stylesheet" href="css/angular-material.layouts.css">
+    <link type="text/css" rel="stylesheet" href="css/jando_main4.css">
+    <style>
+        /*@font-face {
+            font-family: clearSans;
+            src: url('./fonts/ClearSans-Regular.ttf');
+        }*/
+        @font-face {
+            font-family: MyriadArabic-Regular;
+            src: url("./fonts/MyriadArabic-Regular.otf") format("opentype");
+        }
+    </style>
+    <!--Clear Sans Font-->
+</head>
+<body ng-app="main_app" class="ng-cloak">
+    <div ng-controller="landing_controller" scrolldirective layout-fill layout="column" style="min-height: 100vh;" ng-cloak >
+
+        <div id="landing_top" style="min-height: 620px; margin-bottom:-20px" show-xs show-sm hide-gt-sm>
+
+            <md-toolbar class="toolbar-style1" ng-style="headerstyle">
+                <center><img src="img/jando_arabic_logo.png" alt="" style="width: 35%; height: 35%; margin-top:10px;"><br/><span style="position:relative; top: -10px; font-size:20px;"><a href="/index.html" style="color:#333333; text-decoration: none;">English</a></span></center>
+
+            </md-toolbar>
+
+            <!-- Logo -->
+            <!-- <center>
+                <img src="jimg/logo-badly-cut.svg" alt="">
+            </center> -->
+
+            <!-- Individual/ Business -->
+            <!-- <div flex layout="row" layout-align="center" style="margin-top: 120px;">
+                <md-button class="btn-land1">Individual</md-button>
+                <a ng-href="https://business.jando.com/">
+                    <md-button ng-class="{'btn-land2' : headertransparent, 'btn-land2b' : !headertransparent}" >Business</md-button>
+                </a>
+            </div> -->
+
+            <!-- 3 Icons -->
+            <div flex layout="row" class="md-padding" layout-align="center" style="margin-top: 150px;">
+                <div flex-gt-sm="10" layout="column" style="margin: 10px;">
+                    <center><img src="jimg/svg/icon_line_i_1.svg" alt="" data-pin-nopin="true" class="landing-icon-xs"></center>
+                    <center><span class="landing-icon-font1">أنت بحاجة فقط إلى <br/>رقم هاتف خليوي </span></center>
+                </div>
+                <div flex-gt-sm="10" layout="column" style="margin: 10px;">
+                    <center><img src="jimg/svg/icon_line_i_2.svg" alt="" data-pin-nopin="true" class="landing-icon-xs"></center>
+                    <center><span class="landing-icon-font1">أرسل الأموال إلى<br>العائلة والأصدقاء</span></center>
+                </div>
+                <div flex-gt-sm="10" layout="column" style="margin: 10px;">
+                    <center><img src="jimg/svg/icon_line_i_3.svg" alt="" data-pin-nopin="true" class="landing-icon-xs"></center>
+                    <center><span class="landing-icon-font3">ٳشحن رصيدك نقداً وتمتع<br/>بالصرف عبر الانترنت</span></center>
+                </div>
+            </div>
+            <span flex><br><br></span>
+        </div>
+
+
+        <div  hide-xs hide-sm show-gt-sm>
+            <md-toolbar class="toolbar-style" ng-style="headerstyle">
+                <div class="md-toolbar-tools row">
+                    <a href="/index.html" class="nav-text" style="cursor:pointer; margin-top: -15px;" ng-style="headertextstyle" ><img src="jimg/logo-badly-cut.svg" alt="" data-pin-nopin="true" class="landing-toolbar-icon" style="width: 80%; height: 80%; margin-left: 20px"></a>
+                    <span flex></span>
+                      <a ng-click="toContact()" class="nav-text" style="cursor:pointer; margin-left:-20px; padding-right: 20px" ng-style="headertextstyle" >إتصل بنا</a>
+                      <a ng-click="toWhere()" class="nav-text" style="cursor:pointer; padding-right: 20px" ng-style="headertextstyle" >ابحث عنا </a>
+                      <a ng-click="toHow()" class="nav-text" style="cursor:pointer; padding-right: 20px" ng-style="headertextstyle" >كيف تعمل </a>
+                      <a ng-click="toGap()" class="nav-text" style="cursor:pointer; padding-right: 20px" ng-style="headertextstyle" >لماذا جاندو</a>
+                      <span flex></span>
+                    <a href="/arabic.html" class="nav-text" style="cursor:pointer; margin-top: -15px; margin-right: -50px" ng-style="headertextstyle" ><img src="img/jando_arabic_logo.png" alt="" data-pin-nopin="true" class="landing-toolbar-icon" style="width: 70%; height: 70%;"></a>
+                </div>
+            </md-toolbar>
+
+
+            <div id="landing_top" style="min-height: 120vh; margin-bottom:-20vh" du-scroll-container>
+                <div flex>
+                    <br/>&nbsp;
+                    <br/>&nbsp;
+                    <center>
+                        <p class="landing-header" style="color:#fff">Payments. For Everyone.</p>
+                    </center>
+                </div>
+                <div flex layout="row" layout-sm="column" layout-xs="column" class="md-padding" layout-align="center" style="margin-top: -15px;">
+                    <div flex-gt-sm="15" layout="column" style="margin: 15px;">
+                        <center><img src="jimg/svg/icon_line_i_1.svg" alt="" data-pin-nopin="true" class="landing-icon"></center>
+                        <center><span class="landing-icon-font1">أنت بحاجة فقط إلى <br/>رقم هاتف خليوي </span></center>
+                    </div>
+                    <div flex-gt-sm="15" layout="column" style="margin: 15px;">
+                        <center><img src="jimg/svg/icon_line_i_2.svg" alt="" data-pin-nopin="true" class="landing-icon"></center>
+                        <center><span class="landing-icon-font1">أرسل الأموال إلى<br>العائلة والأصدقاء</span></center>
+                    </div>
+                    <div flex-gt-sm="15" layout="column" style="margin: 15px;">
+                        <center><img src="jimg/svg/icon_line_i_3.svg" alt="" data-pin-nopin="true" class="landing-icon"></center>
+                        <center><span class="landing-icon-font3">ٳشحن رصيدك نقداً وتمتع<br/>بالصرف عبر الانترنت</span></center>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <center>
+                <a ng-click="toGap()" class="nav-text" style="cursor:pointer; margin-left: 50px;" ng-style="headertextstyle" ><img src="img/down_arrow.png" alt="" data-pin-nopin="true" class="landing-toolbar-icon" style="width: 3%; height: 3%"></a></center>
+            </div>
+        </div>
+
+
+        <!--  -->
+        <!-- container -->
+        <!--  -->
+        <div id="container" du-scroll-container >
+            <div id="gapTo" flex>
+                <!-- <div style="background-color: #00bfff;" show-xs show-sm hide-gt-sm flex> -->
+                <div class="section-background-image6c" show-xs show-sm hide-gt-sm flex>
+                    <div flex layout="row" layout-sm="row" layout-xs="column">
+                        <div flex layout="column" flex-gt-md="33" class="section-padding">
+
+
+
+                            <div layout="row" layout-align="end end">
+                                <span class="section-heading" style="text-align: right; float: right">المشكلة الملحوظة</span>
+                            </div>
+                            <div layout="column" style="margin-top: -5px">
+                                <p class="section-paragraph" style="text-align: right; float: right">هناك العديد من الأشخاص الذين لا يملكون حساباً مصرفياً أو بطاقات إعتماد</p>
+                                <p class="section-paragraph" style="margin-top: -5px;text-align: right; float: right">وهذه الحالة تحد من قدراتهم على التسوق فعلياً أو عبر الانترنت. كما أنها تشكل عائق لارسال الأموال إلى العائلة والأصدقاء، وللتواصل مع العا</p>
+                            </div>
+
+                            <div layout="row" layout-align="end end">
+                                <span class="section-heading" style="text-align: right; float: right">الحل</span>
+                            </div>
+                            <div layout="column" style="margin-top: -5px" style="text-align: right; float: right">
+                                <p class="section-paragraph" style="text-align: right; float: right">جاندو تتفهم متطلبات زبائننا وتملأ الفراغ بتزويدك ببطاقة جاندو فيصبح عالم التسوق عبر الانترنت بمتناول يديك</p>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="section-background-image6" hide-xs hide-sm flex >
+                    <div flex layout="row" layout-sm="column" layout-xs="column">
+
+
+                        <div flex layout="column" flex-gt-md="33" class="section-padding">
+                            <div layout="row" layout-align="end end">
+                                <span class="section-heading" style="text-align: right; float: right">الحل </span>
+                            </div>
+                            <div layout="row" style="margin-top: -5px">
+                                <p class="section-paragraph" style="text-align: right; float: right">جاندو تتفهم متطلبات زبائننا وتملأ الفراغ بتزويدك ببطاقة جاندو فيصبح عالم التسوق عبر الانترنت بمتناول يديك</p>
+                            </div>
+                        </div>
+
+                        <div flex layout="column" flex-gt-md="33" class="section-padding">
+                            <!-- <img src="jimg/svg/icon_bridge.svg" alt="jando bridges the gap" data-pin-nopin="true" class="section-image"> -->
+                        </div>
+
+                        <div flex layout="column" flex-gt-md="33" class="section-padding">
+                            <div layout="row" layout-align="end end">
+                                <span class="section-heading" style="text-align: right; float: right">المشكلة الملحوظة </span>
+                            </div>
+                            <div layout="column" style="margin-top: -5px">
+                                <p class="section-paragraph" style="text-align: right; float: right">هناك العديد من الأشخاص الذين لا يملكون حساباً مصرفياً أو بطاقات إعتماد</p>
+                                <p class="section-paragraph" style="margin-top: -5px;text-align: right; float: right">وهذه الحالة تحد من قدراتهم على التسوق فعلياً أو عبر الانترنت. كما أنها تشكل عائق لارسال الأموال إلى العائلة والأصدقاء، وللتواصل مع العالم </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="howTo">
+                <div show-xs show-sm hide-gt-sm flex>  <!-- IE layout="column" -->
+                    <div flex layout="column" class="md-padding">
+                    </div>
+                    <center>
+                        <p class="section-heading2">كيف تعمل؟ انها بغاية السهولة </p>
+                    </center>
+                    <div flex layout="row" layout-sm="column" layout-xs="column" class="md-padding" style="margin-top: -30px">
+
+
+                        <div flex-gt-sm="25" layout="column" class="md-padding">
+                            <center><img src="jimg/svg/icon_lrg_i_1.svg" alt="" data-pin-nopin="true" class="section-icon"></center>
+                            <center><span class="landing-icon-font" style="text-align: right;">سجل حساب جاندو عبر الانترنت أو <br/>عبر المتاجر المشاركة</span></center>
+                        </div>
+                        <div flex-gt-sm="25" layout="column" class="md-padding">
+                            <center><img src="jimg/svg/icon_lrg_i_2.svg" alt="" data-pin-nopin="true" class="section-icon"></center>
+                            <center><span class="landing-icon-font" style="text-align: right;">ٳشحن رصيدك نقداً أو عبر <br/>طرق عديدة مناسبة </span></center>
+                        </div>
+                        <div flex-gt-sm="25" layout="column" class="md-padding">
+                            <center><img src="jimg/svg/icon_lrg_i_3.svg" alt="" data-pin-nopin="true" class="section-icon"></center>
+                            <center><span class="landing-icon-font" style="text-align: right;">إستلم بطاقتك جاندو الفعلية <br/>أو الافتراضية </span></center>
+                        </div>
+                        <div flex-gt-sm="25" layout="column" class="md-padding">
+                            <center><img src="jimg/svg/icon_lrg_i_4.svg" alt="" data-pin-nopin="true" class="section-icon"></center>
+                            <center><span class="landing-icon-font" style="text-align: right; ">تمتع بالتسوق والدفع بامان  عالمياً. أرسل الأموال للعائلة</span></center>
+                        </div>
+                    </div>
+                    <span flex><br><br><br></span>
+                </div>
+
+                <div  id="howTo" hide-sm hide-xs show-gt-sm flex>  <!-- IE layout="column" -->
+                    <div flex layout="column" class="md-padding">
+                    </div>
+                    <center>
+                        <p class="section-heading2">كيف تعمل؟ انها بغاية السهولة </p>
+                    </center>
+                    <div flex layout="row" layout-sm="column" class="md-padding" style="margin-top: -30px">
+                        <div flex-gt-sm="25" layout="column" class="md-padding">
+                            <center><img src="jimg/svg/icon_lrg_i_4.svg" alt="" data-pin-nopin="true" class="section-icon"></center>
+                            <center><span class="landing-icon-font" style="text-align: right; ">تمتع بالتسوق والدفع بامان  عالمياً. أرسل الأموال للعائلة</span></center>
+                        </div>
+                        <div flex-gt-sm="25" layout="column" class="md-padding">
+                            <center><img src="jimg/svg/icon_lrg_i_3.svg" alt="" data-pin-nopin="true" class="section-icon"></center>
+                            <center><span class="landing-icon-font" style="text-align: right;">إستلم بطاقتك جاندو الفعلية <br/>أو الافتراضية </span></center>
+                        </div>
+                        <div flex-gt-sm="25" layout="column" class="md-padding">
+                            <center><img src="jimg/svg/icon_lrg_i_2.svg" alt="" data-pin-nopin="true" class="section-icon"></center>
+                            <center><span class="landing-icon-font" style="text-align: right;">ٳشحن رصيدك نقداً أو عبر <br/>طرق عديدة مناسبة </span></center>
+                        </div>
+                        <div flex-gt-sm="25" layout="column" class="md-padding">
+                            <center><img src="jimg/svg/icon_lrg_i_1.svg" alt="" data-pin-nopin="true" class="section-icon"></center>
+                            <center><span class="landing-icon-font" style="text-align: right;">سجل حساب جاندو عبر الانترنت أو <br/>عبر المتاجر المشاركة</span></center>
+                        </div>
+                    </div>
+                    <span flex><br><br><br></span>
+                </div>
+            </div>
+
+
+            <div flex layout="row" show-xs show-sm hide-gt-sm flex>  <!-- IE layout-sm="column" layout-xs="column" -->
+                <div flex flex-gt-md="50" class="section-background-image2 ">
+                    <div flex class="section-padding" layout-align="end end"> <!-- IE layout="column" -->
+                        <p class="section-heading2"style="text-align: right ; float: right">الخيارات لا متناهية</p><br/>
+                        <md-list flex layout-align="end end">
+                            <md-list-item class="md-1-line" style="font-size: 23px; text-align: right ; float: right ">
+                                <div class="md-list-item-text" style="font-size: 23px; text-align: right ; float: right ">
+                                    <p style="font-size: 23px;text-align: right; float: right">ٳشحن رصيدك بطريقة سهلة جداً من خلال المتاجر المشاركة </p>
+                                </div>
+                                <img ng-src="jimg/svg/icon_sml_i_1.svg" class="md-avatar" alt="alt image text" />
+                            </md-list-item>
+                            <md-list-item class="md-1-line" style="font-size: 23px; text-align: right ; float: right ">
+                                <div class="md-list-item-text" style="font-size: 23px; text-align: right ; float: right ">
+                                    <p style="font-size: 23px;text-align: right; float: right">لست بحاجة إلى حساب مصرفي أو إلى هاتف ذكي <br/>smartphone</p>
+                                </div>
+                                <img ng-src="jimg/svg/icon_sml_b_1.svg" class="md-avatar" alt="alt image text" />
+                            </md-list-item>
+                            <md-list-item class="md-1-line" style="font-size: 23px; text-align: right ; float: right ">
+                                <div class="md-list-item-text" style="font-size: 23px; text-align: right ; float: right ">
+                                    <p style="font-size: 23px;text-align: right; float: right">إنشاء بطاقات افتراضية مباشرةً-طريقة سريعة وسهلة</p>
+                                </div>
+                                <img ng-src="jimg/svg/icon_sml_b_2.svg" class="md-avatar" alt="alt image text" />
+                            </md-list-item>
+                            <md-list-item class="md-1-line" style="font-size: 23px; text-align: right ; float: right ">
+                                <div class="md-list-item-text" style="font-size: 23px; text-align: right ; float: right ">
+                                    <p style="font-size: 23px;text-align: right; float: right">طاقات فعلية مع ميزات وفوائد إضافية </p>
+                                </div>
+                                <img ng-src="jimg/svg/icon_sml_b_3.svg" class="md-avatar" alt="alt image text" />
+                            </md-list-item>
+                            <md-list-item class="md-1-line" style="font-size: 23px; text-align: right ; float: right ">
+                                <div class="md-list-item-text" style="font-size: 23px; text-align: right ; float: right ">
+                                    <p style="font-size: 23px; text-align: right ; float: right ">ٳستعملها في الملايين من المتاجر عالمياً أو لتسوق آمن عبر الانترنت </p>
+                                </div>
+                                <img ng-src="jimg/svg/icon_sml_b_4.svg" class="md-avatar" alt="alt image text" />
+                            </md-list-item>
+                            <md-list-item class="md-1-line" style="font-size: 23px; text-align: right ; float: right ">
+                                <div class="md-list-item-text" style="font-size: 23px; text-align: right ; float: right ">
+                                    <p style="font-size: 23px; text-align: right ; float: right ">أرسل واستلم الأموال إلى/من العائلة</p>
+                                </div>
+                                <img ng-src="jimg/svg/icon_sml_b_5.svg" class="md-avatar" alt="alt image text" />
+                            </md-list-item>
+                        </md-list>
+                    </div>
+                </div>
+            </div>
+
+            <div flex layout="row" hide-xs hide-sm show-gt-sm flex>  <!-- IE layout-sm="column" layout-xs="column" -->
+                <div flex flex-gt-md="50" class="section-background-image2 ">
+                    <div flex class="section-padding" layout-align="end end"> <!-- IE layout="column" -->
+                        <center><p class="section-heading2" >الخيارات لا متناهية </p></center>
+                        <md-list flex layout-align="end end" >
+                            <md-list-item class="md-1-line" style="font-size: 23px; text-align: right ; float: right ">
+                                <div class="md-list-item-text" style="font-size: 23px; text-align: right ; float: right ">
+                                    <p style="font-size: 23px;text-align: right; float: right">ٳشحن رصيدك بطريقة سهلة جداً من خلال المتاجر المشاركة </p>
+                                </div>
+                                <img ng-src="jimg/svg/icon_sml_i_1.svg" class="md-avatar" alt="alt image text" />
+                            </md-list-item>
+                            <md-list-item class="md-1-line" style="font-size: 23px; text-align: right ; float: right ">
+                                <div class="md-list-item-text" style="font-size: 23px; text-align: right ; float: right ">
+                                    <p style="font-size: 23px; text-align: right ; float: right ">لست بحاجة إلى حساب مصرفي أو إلى هاتف ذكي <br/>smartphone</p></p>
+                                </div>
+                                <img ng-src="jimg/svg/icon_sml_b_1.svg" class="md-avatar" alt="alt image text" />
+                            </md-list-item>
+                            <md-list-item class="md-1-line" style="font-size: 23px; text-align: right ; float: right ">
+                                <div class="md-list-item-text" style="font-size: 23px; text-align: right ; float: right ">
+                                    <p style="font-size: 23px; text-align: right ; float: right ">إنشاء بطاقات افتراضية مباشرةً-طريقة سريعة وسهلة </p>
+                                </div>
+                                <img ng-src="jimg/svg/icon_sml_b_2.svg" class="md-avatar" alt="alt image text" />
+                            </md-list-item>
+                            <md-list-item class="md-1-line" style="font-size: 23px; text-align: right ; float: right ">
+                                <div class="md-list-item-text" style="font-size: 23px; text-align: right ; float: right ">
+                                    <p style="font-size: 23px; text-align: right ; float: right ">بطاقات فعلية مع ميزات وفوائد إضافية </p>
+                                </div>
+                                <img ng-src="jimg/svg/icon_sml_b_3.svg" class="md-avatar" alt="alt image text" />
+                            </md-list-item>
+                            <md-list-item class="md-1-line" style="font-size: 23px; text-align: right ; float: right ">
+                                <div class="md-list-item-text" style="font-size: 23px; text-align: right ; float: right ">
+                                    <p style="font-size: 23px; text-align: right ; float: right ">ٳستعملها في الملايين من المتاجر عالمياً أو لتسوق آمن عبر الانترنت </p>
+                                </div>
+                                <img ng-src="jimg/svg/icon_sml_b_4.svg" class="md-avatar" alt="alt image text" />
+                            </md-list-item>
+                            <md-list-item class="md-1-line" style="font-size: 23px; text-align: right ; float: right ">
+                                <div class="md-list-item-text" style="font-size: 23px; text-align: right ; float: right ">
+                                  <p style="font-size: 23px; text-align: right ; float: right ">أرسل واستلم الأموال إلى/من العائلة</p>
+                                </div>
+                                <img ng-src="jimg/svg/icon_sml_b_5.svg" class="md-avatar" alt="alt image text" />
+                            </md-list-item>
+                        </md-list>
+                    </div>
+                </div>
+                <div flex flex-gt-md="50" class="section-background-image"> <!-- IE layout="column" -->
+                </div>
+            </div>
+
+
+            <!--  -->
+            <!-- whereTo -->
+            <!--  -->
+            <div id="whereTo2" style="background-color: #00bfff;" show-xs show-sm hide-gt-sm flex> <!-- IE layout="column" -->
+                <span flex><br></span>
+                <div > <!-- IE layout="column" -->
+                    <center><span class="landing-section-heading3">أين تجد جاندو؟</span></center>
+                    <br>
+                    <center>
+                        <p class="landing-section-font5">هناك عدة طرقٍ بمتناول يديك تستطيع من خلالها</p>
+                        <p class="landing-section-font5">إنشاء وتشحين حسابك جاندو</p>
+                        <br>
+                        <img ng-src="jimg/svg/icon_num_1.svg" alt="alt image text" class="num-icon" />
+                        <p class="landing-section-font5">يمكنك اليوم إنشاء حسابك جاندو عبر الانترنت </p>
+                        <br>
+                        <div flex layout="row" layout-align="center">
+                            <md-button class="btn2" ng-click="toContact()"><b>انضم إلينا الأن </b></md-button>
+                        </div>
+                        <br>
+                        <img ng-src="jimg/svg/txt_or.svg" alt="alt image text" class="or-text" />
+                        <br>
+                        <img ng-src="jimg/svg/icon_num_2.svg" alt="alt image text" class="num-icon" style="flex-shrink: 0"/>
+                        <p class="landing-section-font5"><b>قم بزيارة أي من المتاجر <br/>المشاركة الأقرب إليك </b></p>
+                        <img ng-src="jimg/svg/icon_arrow_right.svg" alt="alt image text" class="num-icon" />
+                        <br>
+                    </center>
+                </div>
+            </div>
+
+
+            <div id="whereTo"  class="section-background-image3 " hide-xs hide-sm flex> <!-- IE layout="column" -->
+                <span flex><br></span>
+                <div flex layout="row" class="section-padding">
+                    <div flex-gt-md="33"> <!-- IE layout="column" -->
+                        <center><span class="landing-section-heading3"> أين تجد جاندو؟</span></center>
+                        <br>
+                        <center>
+                            <p class="landing-section-font5">هناك عدة طرقٍ بمتناول يديك تستطيع</p> <p class="landing-section-font5">من خلالها إنشاء وتشحين حسابك جاندو </p>
+                            <br>
+                            <img ng-src="jimg/svg/icon_num_1.svg" alt="alt image text" class="num-icon" />
+                            <p class="landing-section-font5">يمكنك اليوم إنشاء حسابك جاندو عبر الانترنت </p>
+                            <br>
+                            <div flex layout="row" layout-align="center">
+                                <!-- <md-button class="btn2"><b>Join Now</b></md-button> -->
+                                <a>
+                                    <md-button class="btn2" ng-click="toContact()"><b>انضم إلينا الأن</b>
+                                    </md-button>
+                                </a>
+                            </div>
+                            <br>
+                            <img ng-src="jimg/svg/txt_or.svg" alt="alt image text" class="or-text" />
+                            <br>
+                            <img ng-src="jimg/svg/icon_num_2.svg" alt="alt image text" class="num-icon" />
+                            <p class="landing-section-font5"><b>قم بزيارة أي من المتاجر المشاركة الأقرب إليك</b></p>
+                            <!-- <img ng-src="jimg/svg/icon_arrow_right.svg" alt="alt image text" class="num-icon" /> -->
+                            <br>
+                        </center>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="section-background-image4 " id="contactTo" flex> <!-- IE layout="column" -->
+                <span flex><br></span>
+                <div flex class="section-padding" layout-align="center center" show-gt-sm hide-sm hide-xs> <!-- IE layout="column" -->
+                    <div style="margin: 30px;"> <!-- IE layout="column" -->
+                        <center><span class="landing-section-heading3">تواصل معنا</span></center>
+                    </div>
+                    <center>
+                        <p class="landing-section-font5" ><b>info@jando.com</b> نحن هنا لخدمتك. إتصل بنا مباشرةً عبر  </p><p class="landing-section-font5">أو قم بتعبئة النموذج التالي وسوف نجيبك بأقرب وقت ممكن</p>
+                    </center>
+                    <form name="userForm">
+                        <div layout-gt-sm="row" style="padding-left: 25%">
+                            <md-input-container class="md-icon-float md-block" flex-gt-sm style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                                <!-- Use floating label instead of placeholder -->
+                                <label></label>
+                                <md-icon md-svg-src="jimg/svg/icon_form_name.svg" class="name name-icon"></md-icon>
+                                <input type="text" ng-model="ui.name" style="max-width:70%; color:#fff; border-color:rgba(255,255,255,1); direction: rtl;
+                                text-align: right;" placeholder="الاسم الكامل"/>
+                            </md-input-container>
+                        </div>
+                        <br/>
+                        <div layout-gt-sm="row" style="padding-left: 25%">
+                            <md-input-container class="md-icon-float md-block" flex-gt-sm style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);"/>
+                                <label></label>
+                                <md-icon md-svg-src="jimg/svg/icon_form_email.svg" class="name name-icon"></md-icon>
+                                <input name="email" ng-model="ui.email" style="max-width:50%; color:rgba(255,255,255,1); border-color:rgba(255,255,255,1); direction: rtl;
+                                text-align: right;" placeholder="البريد الالكتروني"/>
+                            </md-input-container>
+                            <br/>
+                            <md-input-container class="md-icon-float md-block" flex-gt-sm style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1); margin-left:-25%">
+                                <label></label>
+                                <md-icon md-svg-src="jimg/svg/icon_form_number.svg" class="name name-icon"></md-icon>
+                                <input name="phone" ng-model="ui.phone" style="max-width:50%; color:rgba(255,255,255,1); border-color:rgba(255,255,255,1); direction: rtl;
+                                text-align: right;" placeholder="رقم الهاتف"/>
+                            </md-input-container>
+                        </div>
+                        <br/>
+                        <div layout-gt-sm="row" style="padding-left: 25%">
+                            <md-input-container class="md-block" flex-gt-sm style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                                <!-- Use floating label instead of placeholder -->
+                                <label></label>
+                                <input type="text" ng-model="ui.message" style="max-width:72%; color:rgba(255,255,255,1); border-color:rgba(255,255,255,1); direction: rtl;
+                                text-align: right;" placeholder="اكتب رسالتك هنا "/>
+                            </md-input-container>
+                        </div>
+                        <br/>
+                    </form>
+                    <div flex layout="row" layout-align="center" style="margin-bottom: 25px">
+                        <md-button class="btn3" ng-click="button_send()"><b>إرسال </b></md-button>
+                    </div>
+                </div>
+
+                <div flex class="section-padding" layout-align="center center" hide-gt-sm show-sm show-xs> <!-- IE layout="column" -->
+                    <div style="margin: 30px;"> <!-- IE layout="column" -->
+                        <center><span class="landing-section-heading3">تواصل معنا</span></center>
+                    </div>
+                    <center>
+                        <p class="landing-section-font5" ><b>info@jando.com</b> نحن هنا لخدمتك. إتصل بنا مباشرةً عبر  </p><p class="landing-section-font5">أو قم بتعبئة النموذج التالي وسوف نجيبك بأقرب وقت ممكن</p>
+                    </center>
+                    <center>
+                        <form name="userForm">
+                            <div layout-gt-sm="row" style="margin-left: 5%;">
+                                <md-input-container class="md-icon-float md-block" flex-gt-sm style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                                    <!-- Use floating label instead of placeholder -->
+                                    <label></label>
+                                    <md-icon md-svg-src="jimg/svg/icon_form_name.svg" class="name name-icon"></md-icon>
+                                    <input type="text" ng-model="ui.name" style="max-width:90%; color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);; direction: rtl;
+                                    text-align: right;" placeholder="الاسم الكامل"/>
+
+                                </md-input-container>
+                            </div>
+                            <br/>
+                            <div layout-gt-sm="row" style="padding-left: 5%;">
+                                <md-input-container class="md-icon-float md-block" flex-gt-sm style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                                    <label></label>
+                                    <md-icon md-svg-src="jimg/svg/icon_form_email.svg" class="name name-icon"></md-icon>
+                                    <input name="email" ng-model="ui.email" style="max-width:90%; color:rgba(255,255,255,1); border-color:rgba(255,255,255,1); direction: rtl;
+                                    text-align: right;" placeholder="البريد الالكتروني"/>
+                                </md-input-container>
+                            </div>
+                            <div layout-gt-sm="row" style="padding-left: 5%;">
+                                <br/>
+                                <md-input-container class="md-icon-float md-block" flex-gt-sm style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                                    <label></label>
+                                    <md-icon md-svg-src="jimg/svg/icon_form_number.svg" class="name name-icon"></md-icon>
+                                    <input name="phone" ng-model="ui.phone" style="max-width:90%; color:rgba(255,255,255,1); border-color:rgba(255,255,255,1); direction: rtl;
+                                    text-align: right;" placeholder="رقم الهاتف"/>
+                                </md-input-container>
+                            </div>
+                            <br/>
+                            <div layout-gt-sm="row" style="padding-left: 5%;">
+                                <md-input-container class="md-block" flex-gt-sm style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                                    <!-- Use floating label instead of placeholder -->
+                                    <label></label>
+                                    <input type="text" ng-model="ui.message" style="max-width:90%; color:rgba(255,255,255,1); border-color:rgba(255,255,255,1); direction: rtl;
+                                    text-align: right;" placeholder="اكتب رسالتك هنا "/>
+                                </md-input-container>
+                            </div>
+                            <br/>
+                        </form>
+                    </center>
+                    <div flex layout="row" layout-align="center" style="margin-bottom: 25px;">
+                        <md-button class="btn3" ng-click="button_send()"><b>إرسال</b></md-button>
+                    </div>
+                </div>
+
+                <md-divider inset></md-divider>
+                <!-- <div>
+                    <p></p>
+                </div> -->
+
+                <md-toolbar md-scroll-shrink ng-if="true" class="transparent" hide-xs>
+                    <div class="md-toolbar-tools">
+                        <p class="footer-text"><span>&copyJando.com 2016</span> </p>
+                        <span flex></span>
+                        <md-button class="md-icon-button" aria-label="More">
+                            <!-- <md-icon md-svg-icon="jimg/svg/icon_social_fb.svg"></md-icon> -->
+                        </md-button>
+                        <md-button class="md-icon-button" aria-label="More">
+                            <!-- <md-icon md-svg-icon="jimg/svg/icon_social_inst.svg"></md-icon> -->
+                        </md-button>
+                    </div>
+                </md-toolbar>
+
+
+
+                <md-toolbar md-scroll-shrink ng-if="true" class="transparent" layout-xs="column" show-xs hide-gt-xs> <!-- IE layout-xs="column" -->
+                    <center>
+                        <p class="footer-text">
+                            <span>
+                                <!-- <a ng-href="tandc.html" style="text-decoration: none; color: inherit;">
+                                    Terms & Conditions
+                                </a> -->
+                            </span>
+                            <br/>
+                            <span>
+                                <!-- <a ng-href="privacy_policy.html" style="text-decoration: none; color: inherit;">
+                                    Privacy Policy
+                                </a> -->
+                            </span>
+                            <br/>
+                            <span>
+                                &copy;Jando.com 2016
+                            </span>
+                            <br/>
+                            <br/>
+                            <span>
+                                <!-- <md-icon md-svg-icon="jimg/svg/icon_social_fb.svg"></md-icon> -->
+                            </span>
+                            &nbsp;
+                            &nbsp;
+                            <span>
+                                <!-- <md-icon md-svg-icon="jimg/svg/icon_social_inst.svg"></md-icon> -->
+                            </span>
+                        </p>
+                    </center>
+                </md-toolbar>
+            </div>
+            <div  class="section-background-image5 " flex> <!-- IE layout="column" -->
+                <span flex><br><br></span>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="lib/angular.min.js"></script>
+    <script type="text/javascript" src="lib/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="lib/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="lib/angular-material/angular-material.min.js"></script>
+    <script type="text/javascript" src="lib/angular-route.min.js"></script>
+    <script type="text/javascript" src="lib/angular-scroll.js"></script>
+    <script type="text/javascript" src="lib/moment.min.js"></script>
+    <script type="text/javascript" src='lib/lodash.underscore.min.js'></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/lookups.js"></script>
+    <script type="text/javascript" src="src/landing/landing2.js"></script>
+
+</body>
+
+</html>

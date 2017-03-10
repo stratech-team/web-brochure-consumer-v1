@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100%" height="100%" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 9.88222 9.88222"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str1 {stroke:#05C2FD;stroke-width:0.28222}
+    .str0 {stroke:#2FC5EB;stroke-width:0.28222}
+    .str3 {stroke:white;stroke-width:0.56444;stroke-linecap:round;stroke-linejoin:round}
+    .str2 {stroke:#2FC5EB;stroke-width:0.28222;stroke-dasharray:0.564440 0.282220}
+    .fil1 {fill:none}
+    .fil3 {fill:#05C1FC}
+    .fil0 {fill:white}
+    .fil2 {fill:#2FC5EB}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <circle class="fil0 str0" cx="4.94111" cy="4.94111" r="4.8"/>
+  <rect class="fil1 str1" x="1.97579" y="2.25153" width="4.49286" height="2.99524" rx="0.15" ry="0.15"/>
+  <line class="fil1 str2" x1="4.9619" y1="2.24677" x2="4.9619" y2= "5.24201" />
+  <rect class="fil2" x="2.27579" y="2.79876" width="2.24643" height="0.249603"/>
+  <rect class="fil2" x="2.27579" y="3.29796" width="2.24643" height="0.249603"/>
+  <rect class="fil2" x="2.27579" y="3.79717" width="1.49762" height="0.249603"/>
+  <rect class="fil0 str3" x="3.77579" y="4.78922" width="4.28635" height="2.85757" rx="0.15" ry="0.15"/>
+  <rect class="fil3" x="3.77579" y="5.26548" width="4.28635" height="0.476262"/>
+  <rect class="fil2" x="6.1571" y="6.69427" width="0.714392" height="0.476262"/>
+  <rect class="fil2" x="7.10962" y="6.69427" width="0.714392" height="0.476262"/>
+  <rect class="fil1 str0" x="3.77579" y="4.78922" width="4.28635" height="2.85757" rx="0.15" ry="0.15"/>
+  <rect class="fil2" x="3.77579" y="5.26548" width="4.28635" height="0.476262"/>
+  <rect class="fil2" x="6.1571" y="6.69427" width="0.714392" height="0.476262"/>
+  <rect class="fil2" x="7.10962" y="6.69427" width="0.714392" height="0.476262"/>
+ </g>
+</svg>

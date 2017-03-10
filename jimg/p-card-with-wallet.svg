@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100%" height="100%" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 9.88222 9.88222"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#04E407;stroke-width:0.28222}
+    .str3 {stroke:#04E407;stroke-width:0.28222;stroke-linecap:round;stroke-linejoin:round}
+    .str2 {stroke:white;stroke-width:0.56444}
+    .str1 {stroke:white;stroke-width:0.56444;stroke-linecap:round;stroke-linejoin:round}
+    .fil2 {fill:none}
+    .fil3 {fill:#03E305}
+    .fil0 {fill:white}
+    .fil1 {fill:#03E305}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <circle class="fil0 str0" cx="4.94111" cy="4.94111" r="4.8"/>
+  <rect class="fil0 str0" x="1.64394" y="2.23806" width="4.6859" height="2.98193" rx="0.3" ry="0.3"/>
+  <rect class="fil1" x="3.77389" y="3.09004" width="2.12995" height="0.212995"/>
+  <rect class="fil1" x="3.77389" y="3.51603" width="1.49097" height="0.212995"/>
+  <rect class="fil1" x="2.06993" y="4.18768" width="3.83392" height="0.212995"/>
+  <rect class="fil1" x="2.06993" y="4.61367" width="2.76894" height="0.212995"/>
+  <circle class="fil1" cx="2.70892" cy="3.30304" r="0.638986"/>
+  <circle class="fil0" cx="2.70892" cy="3.09004" r="0.212995"/>
+  <path class="fil0" d="M2.28227 3.61595c0.00066,-0.31291 0.85264,-0.31291 0.8527,0.00201 -0.26011,0.30335 -0.59864,0.2926 -0.8527,-0.00201z"/>
+  <g id="_125226808">
+   <rect id="_125227768" class="fil0 str1" x="3.74394" y="4.63806" width="4.28635" height="2.85757" rx="0.15" ry="0.15"/>
+   <rect id="_125227144" class="fil0 str2" x="3.74394" y="5.11432" width="4.28635" height="0.476262"/>
+   <rect id="_125226928" class="fil0 str2" x="6.12525" y="6.54311" width="0.714392" height="0.476262"/>
+   <rect id="_125227432" class="fil0 str2" x="7.07777" y="6.54311" width="0.714392" height="0.476262"/>
+  </g>
+  <rect class="fil2 str3" x="3.74394" y="4.63806" width="4.28635" height="2.85757" rx="0.15" ry="0.15"/>
+  <rect class="fil3" x="3.74394" y="5.11432" width="4.28635" height="0.476262"/>
+  <rect class="fil3" x="6.12525" y="6.54311" width="0.714392" height="0.476262"/>
+  <rect class="fil3" x="7.07777" y="6.54311" width="0.714392" height="0.476262"/>
+ </g>
+</svg>

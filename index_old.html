@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jando</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <meta name="robots" content="noindex" />
+    <link rel='shortcut icon' href='jimg/favicon.ico' type='image/x-icon'/ >
+    <link rel="shortcut icon" href="jimg/icon.png" />
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="css/angular-material.min.css">
+    <link type="text/css" rel="stylesheet" href="css/angular-material.layouts.css">
+    <link type="text/css" rel="stylesheet" href="css/jando_main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <style>
+        @font-face {
+            font-family: clearSans;
+            src: url('./fonts/ClearSans-Regular.ttf');
+        }
+        .ie10 span[flex] { display: block; }
+        .ie10 md-dialog { padding: 0px 20px;}
+        .ie10 .ie10FixDivWithSidenav {
+            display: inline-block;
+            width: calc(100% - 280px);
+        }
+    </style>
+    <!--Clear Sans Font-->
+</head>
+
+<body ng-app="main_app" class="ng-cloak">
+    <div ng-controller="landing_controller" scrolldirective layout-fill layout="column" style="min-height: 100vh;" ng-cloak>
+
+        <!--  -->
+        <!-- Side Menu -->
+        <!--  -->
+        <md-sidenav md-component-id="right" md-is-open="isSidenavOpen" class="md-sidenav-right md-whiteframe-4dp">
+            <md-toolbar class="md-theme-light">
+                <img src="jimg/logo-badly-cut.svg" alt="">
+                <h1 class="md-toolbar-tools" style="color:rgb(130,130,130);">Payments. For Everyone</h1>
+            </md-toolbar>
+            <center>
+            </center>
+            <md-list >
+                <center>
+                    <md-button class="btn-land1">Individual</md-button>
+                    <a ng-href="http://business.jando.com/">
+                        <md-button class="btn-land2" style="color:rgb(130,130,130);" >Business</md-button><br/>
+                    </a>
+                    <a ng-href="https://demo.jando.com/customer-login">
+                        <md-button class="btn-land3">Login</md-button><br/>
+                    </a>
+                    <a ng-click="toGap(); isSidenavOpen = false" style="cursor:pointer; color:rgb(130,130,130);">
+                        WHY JANDO<br/>
+                    </a>
+                    <a ng-click="toHow(); isSidenavOpen = false" style="cursor:pointer; color:rgb(130,130,130);">
+                        HOW IT WORKS<br/>
+                    </a>
+                    <a ng-click="toWhere2(); isSidenavOpen = false"  style="cursor:pointer; color:rgb(130,130,130);">
+                        FIND US<br/>
+                    </a>
+                </center>
+            </md-list>
+        </md-sidenav>
+
+        <md-toolbar class="toolbar-style" ng-style="headerstyle" show-xs show-sm hide-gt-sm >
+            <div class="md-toolbar-tools">
+                <span flex></span>
+                <span flex></span>
+                <center>
+                    <img src="jimg/logo-badly-cut.svg" alt="">
+                </center>
+                <span flex></span>
+                <md-button ng-show="hide === true" ng-click="openRightMenu()" class="btm1"><md-icon md-svg-src="jimg/svg/menu.svg" ng-style="headertextstyle"></md-icon></md-button>
+                <!-- <md-button ng-show="hide === true" ng-click="hide = true"><md-icon md-svg-src="jimg/svg/menu.svg"></md-icon></md-button> -->
+            </div>
+            <md-divider inset></md-divider>
+        </md-toolbar>
+
+        <md-toolbar class="toolbar-style" ng-style="headerstyle" hide-xs hide-sm >
+            <div class="md-toolbar-tools">
+                <img src="jimg/logo-badly-cut.svg" alt="" data-pin-nopin="true" class="landing-toolbar-icon">
+                <a ng-click="toGap()">
+                    <p class="nav-text" style="cursor:pointer;" ng-style="headertextstyle" >Why Jando</p>
+                </a>
+                <a ng-click="toHow()">
+                    <p class="nav-text" style="cursor:pointer;" ng-style="headertextstyle" >How it works</p>
+                </a>
+                <a ng-click="toWhere()">
+                    <p class="nav-text" style="cursor:pointer;" ng-style="headertextstyle" >Find us</p>
+                </a>
+                <span flex></span>
+                <!-- <a ng-href="https://demo.jando.com">
+                    <md-button class="btn-land3">Demo</md-button>
+                </a> -->
+                <md-button class="btn-land1">Individual</md-button>
+                <a ng-href="http://business.jando.com/">
+                    <md-button ng-class="{'btn-land2' : headertransparent, 'btn-land2b' : !headertransparent}" >Business</md-button>  <!-- class="btn-land2"  ng-style="headerbuttonstyle" -->
+                </a>
+                <a ng-href="https://demo.jando.com/customer-login">
+                    <md-button ng-class="{'btn-land3' : headertransparent, 'btn-land3b' : !headertransparent}" >Login</md-button>  <!-- class="btn-land3"  -->
+                </a>
+                <!-- <a ng-href="http://jandoapp.memberbase.net/#/login">
+                    <md-button class="btn-land3">Login</md-button>
+                </a> -->
+            </div>
+            <md-divider inset></md-divider>
+        </md-toolbar>
+
+        <!--  -->
+        <!-- Landing Top -->
+        <!--  -->
+        <div id="landing_top" style="min-height: 620px; margin-bottom:-20px" du-scroll-container hide-gt-xs flex>
+            <!-- style="min-height: 100vh;" -->
+            <div flex>
+                <br/>&nbsp;
+                <br/>&nbsp;
+                <center>
+                    <p class="landing-header-small" style="color:#fff">Payments. For Everyone</p>
+                </center>
+            </div>
+            <div flex layout="row" layout-sm="column" layout-xs="column" class="md-padding" layout-align="center" style="margin-top: -35px;">
+                <div flex-gt-sm="10" layout="column" style="margin: 10px;">
+                    <center><img src="jimg/svg/icon_line_i_1.svg" alt="" data-pin-nopin="true" class="landing-icon-xs"></center>
+                    <center><span class="landing-icon-font1">All you need is a mobile number</span></center>
+                </div>
+                <div flex-gt-sm="10" layout="column" style="margin: 10px;">
+                    <center><img src="jimg/svg/icon_line_i_2.svg" alt="" data-pin-nopin="true" class="landing-icon-xs"></center>
+                    <center><span class="landing-icon-font2">Send money to friends and family</span></center>
+                </div>
+                <div flex-gt-sm="10" layout="column" style="margin: 10px;">
+                    <center><img src="jimg/svg/icon_line_i_3.svg" alt="" data-pin-nopin="true" class="landing-icon-xs"></center>
+                    <center><span class="landing-icon-font3">Fund with cash and spend online</span></center>
+                </div>
+            </div>
+            <div flex layout="row" layout-align="center" style="margin-top: 10px">
+                <!-- <md-button class="btn1"><b>Join Now</b></md-button> -->
+                <a ng-href="https://demo.jando.com/customer-register">
+                    <md-button class="btn1"><b>Join Now</b></md-button>
+                </a>
+            </div>
+            <span flex><br><br></span>
+        </div>
+
+        <div id="landing_top" style="min-height: 620px; margin-bottom:-20px" du-scroll-container show-sm hide-xs hide-gt-sm flex>
+            <!-- style="min-height: 100vh;" -->
+            <div flex>
+                <br/>&nbsp;
+                <br/>&nbsp;
+                <center>
+                    <p class="landing-header" style="color:#fff">Payments. For Everyone</p>
+                </center>
+            </div>
+            <div flex layout="row" layout-sm="column" layout-xs="column" class="md-padding" layout-align="center" style="margin-top: -35px;">
+                <div flex-gt-sm="10" layout="column" style="margin: 10px;">
+                    <center><img src="jimg/svg/icon_line_i_1.svg" alt="" data-pin-nopin="true" class="landing-icon"></center>
+                    <center><span class="landing-icon-font1">All you need is a mobile number</span></center>
+                </div>
+                <div flex-gt-sm="10" layout="column" style="margin: 10px;">
+                    <center><img src="jimg/svg/icon_line_i_2.svg" alt="" data-pin-nopin="true" class="landing-icon"></center>
+                    <center><span class="landing-icon-font2">Send money to friends and family</span></center>
+                </div>
+                <div flex-gt-sm="10" layout="column" style="margin: 10px;">
+                    <center><img src="jimg/svg/icon_line_i_3.svg" alt="" data-pin-nopin="true" class="landing-icon"></center>
+                    <center><span class="landing-icon-font3">Fund with cash and spend online</span></center>
+                </div>
+            </div>
+            <div flex layout="row" layout-align="center" style="margin-top: 10px">
+                <!-- <md-button class="btn1"><b>Join Now</b></md-button> -->
+                <a ng-href="https://demo.jando.com/customer-register">
+                    <md-button class="btn1"><b>Join Now</b></md-button>
+                </a>
+            </div>
+            <span flex><br><br></span>
+        </div>
+
+        <div id="landing_top" style="min-height: 120vh; margin-bottom:-20vh" du-scroll-container hide-xs hide-sm flex>
+            <!-- style="min-height: 100vh;" -->
+            <div flex>
+                <br/>&nbsp;
+                <br/>&nbsp;
+                <center>
+                    <p class="landing-header" style="color:#fff">Payments. For Everyone</p>
+                </center>
+            </div>
+            <div flex layout="row" layout-sm="column" layout-xs="column" class="md-padding" layout-align="center" style="margin-top: -35px;">
+                <div flex-gt-sm="15" layout="column" style="margin: 15px;">
+                    <center><img src="jimg/svg/icon_line_i_1.svg" alt="" data-pin-nopin="true" class="landing-icon"></center>
+                    <center><span class="landing-icon-font1">All you need is a <br/>mobile number</span></center>
+                </div>
+                <div flex-gt-sm="15" layout="column" style="margin: 15px;">
+                    <center><img src="jimg/svg/icon_line_i_2.svg" alt="" data-pin-nopin="true" class="landing-icon"></center>
+                    <center><span class="landing-icon-font2">Send money to <br/>friends and family</span></center>
+                </div>
+                <div flex-gt-sm="15" layout="column" style="margin: 15px;">
+                    <center><img src="jimg/svg/icon_line_i_3.svg" alt="" data-pin-nopin="true" class="landing-icon"></center>
+                    <center><span class="landing-icon-font3">Fund with cash <br/>and spend online</span></center>
+                </div>
+            </div>
+            <div flex layout="row" layout-align="center" style="margin-top: 55px">
+                <!-- <md-button class="btn1"><b>Join Now</b></md-button> -->
+                <a ng-href="https://demo.jando.com/customer-register">
+                    <md-button class="btn1"><b>Join Now</b></md-button>
+                </a>
+            </div>
+            <span flex><br><br></span>
+        </div>
+
+
+
+        <!--  -->
+        <!-- container -->
+        <!--  -->
+        <div id="container" du-scroll-container>
+            <div id="gapTo" flex>
+                <div style="background-color: #00bfff;" show-xs show-sm hide-gt-sm flex>
+                    <div flex layout="row" layout-sm="row" layout-xs="column">
+                        <div flex layout="column" flex-gt-md="33" class="section-padding">
+                            <div layout="row">
+                                <span class="section-heading">The problem</span>
+                            </div>
+                            <div layout="column">
+                                <p class="section-paragraph">Many people do not have a bank account or access to credit cards.</p>
+                                <p class="section-paragraph" style="margin-top: -5px">This limits their ability to shop online and offline. To send and receive money between family and friends. To be connected to the world... </p>
+                            </div>
+                            <div layout="row">
+                                <span class="section-heading">The solution</span>
+                            </div>
+                            <div layout="column">
+                                <p class="section-paragraph">Jando understands our consumers' needs and bridges the gap - empowering you with the Jando Card. Connecting you to the e-commerce world </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-background-image6" hide-xs hide-sm flex>
+                    <div flex layout="row" layout-sm="column" layout-xs="column">
+                        <div flex layout="column" flex-gt-md="33" class="section-padding">
+                            <div layout="row">
+                                <span class="section-heading">The problem</span>
+                            </div>
+                            <div layout="column">
+                                <p class="section-paragraph">Many people do not have a bank account or access to credit cards.</p>
+                                <p class="section-paragraph" style="margin-top: -5px">This limits their ability to shop online and offline. To send and receive money between family and friends. To be connected to the world... </p>
+                            </div>
+                        </div>
+                        <div flex layout="column" flex-gt-md="33" class="section-padding">
+                            <!-- <img src="jimg/svg/icon_bridge.svg" alt="jando bridges the gap" data-pin-nopin="true" class="section-image"> -->
+                        </div>
+                        <div flex layout="column" flex-gt-md="33" class="section-padding">
+                            <div layout="row">
+                                <span class="section-heading">The solution</span>
+                            </div>
+                            <div layout="row">
+                                <p class="section-paragraph">Jando understands our consumers' needs and bridges the gap - empowering you with the Jando Card. Connecting you to the e-commerce world </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div layout="column" id="howTo" flex>
+                <div flex layout="column" class="md-padding">
+                </div>
+                <center>
+                    <p class="section-heading2">How does it work? It's really simple</p>
+                </center>
+                <div flex layout="row" layout-sm="column" layout-xs="column" class="md-padding" style="margin-top: -30px">
+                    <div flex-gt-sm="25" layout="column" class="md-padding">
+                        <center><img src="jimg/svg/icon_lrg_i_1.svg" alt="" data-pin-nopin="true" class="section-icon"></center>
+                        <center><span class="landing-icon-font">Sign up in-store or online for a Jando account.</span></center>
+                    </div>
+                    <div flex-gt-sm="25" layout="column" class="md-padding">
+                        <center><img src="jimg/svg/icon_lrg_i_2.svg" alt="" data-pin-nopin="true" class="section-icon"></center>
+                        <center><span class="landing-icon-font">Fund it using cash or with a variety<br/> of other convenient methods.</span></center>
+                    </div>
+                    <div flex-gt-sm="25" layout="column" class="md-padding">
+                        <center><img src="jimg/svg/icon_lrg_i_3.svg" alt="" data-pin-nopin="true" class="section-icon"></center>
+                        <center><span class="landing-icon-font">Receive your virual and/or <br/>physical Jando card.</span></center>
+                    </div>
+                    <div flex-gt-sm="25" layout="column" class="md-padding">
+                        <center><img src="jimg/svg/icon_lrg_i_4.svg" alt="" data-pin-nopin="true" class="section-icon"></center>
+                        <center><span class="landing-icon-font">Spend and make payments worldwide. Send money to friends and family.</span></center>
+                    </div>
+                </div>
+                <span flex><br><br><br></span>
+            </div>
+            <div flex layout="row" layout-sm="column" layout-xs="column">
+                <div flex flex-gt-md="50" class="section-background-image2 ">
+                    <div flex layout="column" class="section-padding" layout-align="center center">
+                        <p class="section-heading2" >The options are endless</p>
+                        <md-list flex>
+                            <md-list-item class="md-1-line">
+                                <img ng-src="jimg/svg/icon_sml_i_1.svg" class="md-avatar" alt="alt image text" />
+                                <div class="md-list-item-text">
+                                    <p style="font-size: 16px;">Easy Cash funding at participating locations</p>
+                                </div>
+                            </md-list-item>
+                            <md-list-item class="md-1-line">
+                                <img ng-src="jimg/svg/icon_sml_b_1.svg" class="md-avatar" alt="alt image text" />
+                                <div class="md-list-item-text">
+                                    <p style="font-size: 16px;">No bank account or smartphone needed</p>
+                                </div>
+                            </md-list-item>
+                            <md-list-item class="md-1-line">
+                                <img ng-src="jimg/svg/icon_sml_b_2.svg" class="md-avatar" alt="alt image text" />
+                                <div class="md-list-item-text">
+                                    <p style="font-size: 16px;">Quick and Simple - Instant Virtual Card Issuing</p>
+                                </div>
+                            </md-list-item>
+                            <md-list-item class="md-1-line">
+                                <img ng-src="jimg/svg/icon_sml_b_3.svg" class="md-avatar" alt="alt image text" />
+                                <div class="md-list-item-text">
+                                    <p style="font-size: 16px;">Physical card with added benefits and features</p>
+                                </div>
+                            </md-list-item>
+                            <md-list-item class="md-1-line">
+                                <img ng-src="jimg/svg/icon_sml_b_4.svg" class="md-avatar" alt="alt image text" />
+                                <div class="md-list-item-text">
+                                    <p style="font-size: 16px;">Use at millions of shops worldwide, online and offline</p>
+                                </div>
+                            </md-list-item>
+                            <md-list-item class="md-1-line">
+                                <img ng-src="jimg/svg/icon_sml_b_5.svg" class="md-avatar" alt="alt image text" />
+                                <div class="md-list-item-text">
+                                    <p style="font-size: 16px;">Send and receive money to/from family and friends</p>
+                                </div>
+                            </md-list-item>
+                        </md-list>
+                    </div>
+                </div>
+                <div flex layout="column" flex-gt-md="50" class="section-background-image">
+                </div>
+            </div>
+
+
+            <!--  -->
+            <!-- whereTo -->
+            <!--  -->
+            <div id="whereTo2" layout="column" style="background-color: #00bfff;" show-xs show-sm hide-gt-sm flex>
+                <span flex><br></span>
+                <div layout="column">
+                    <center><span class="landing-section-heading3">Where to find Jando?</span></center>
+                    <br>
+                    <center>
+                        <p class="landing-section-font5">For your convenience there are many ways </p>
+                        <p class="landing-section-font5">to open and fund your Jando account.</p>
+                        <br>
+                        <img ng-src="jimg/svg/icon_num_1.svg" alt="alt image text" class="num-icon" />
+                        <p class="landing-section-font5">You can open your
+                            <br> Jando account <b>online</b> today.</p>
+                        <br>
+                        <div flex layout="row" layout-align="center">
+                            <md-button class="btn2"><b>Join Now</b></md-button>
+                        </div>
+                        <br>
+                        <img ng-src="jimg/svg/txt_or.svg" alt="alt image text" class="or-text" />
+                        <br>
+                        <img ng-src="jimg/svg/icon_num_2.svg" alt="alt image text" class="num-icon" />
+                        <p class="landing-section-font5"><b>Visit any of the participating <br> locations near you.</b></p>
+                        <img ng-src="jimg/svg/icon_arrow_right.svg" alt="alt image text" class="num-icon" />
+                        <br>
+                    </center>
+                </div>
+            </div>
+
+            
+            <div id="whereTo" layout="column" class="section-background-image3 " hide-xs hide-sm flex>
+                <span flex><br></span>
+                <div flex layout="row" class="section-padding">
+                    <div layout="column" flex-gt-md="33">
+                        <center><span class="landing-section-heading3">Where to find Jando?</span></center>
+                        <br>
+                        <center>
+                            <p class="landing-section-font5">For your convenience there are many ways </p>
+                            <p class="landing-section-font5">to open and fund your Jando account.</p>
+                            <br>
+                            <img ng-src="jimg/svg/icon_num_1.svg" alt="alt image text" class="num-icon" />
+                            <p class="landing-section-font5">You can open your
+                                <br> Jando account <b>online</b> today.</p>
+                            <br>
+                            <div flex layout="row" layout-align="center">
+                                <!-- <md-button class="btn2"><b>Join Now</b></md-button> -->
+                                <a ng-href="https://demo.jando.com/customer-register">
+                                    <md-button class="btn2"><b>Join Now</b></md-button>
+                                </a>
+                            </div>
+                            <br>
+                            <img ng-src="jimg/svg/txt_or.svg" alt="alt image text" class="or-text" />
+                            <br>
+                            <img ng-src="jimg/svg/icon_num_2.svg" alt="alt image text" class="num-icon" />
+                            <p class="landing-section-font5"><b>Visit any of the participating <br> locations near you.</b></p>
+                            <img ng-src="jimg/svg/icon_arrow_right.svg" alt="alt image text" class="num-icon" />
+                            <br>
+                        </center>
+                    </div>
+                </div>
+            </div>
+
+
+
+            
+            <div layout="column" class="section-background-image4 " flex>
+                <span flex><br></span>
+                <div flex layout="column" class="section-padding" layout-align="center center">
+                    <div layout="column" style="margin: 30px;">
+                        <center><span class="landing-section-heading3">Get in contact</span></center>
+                    </div>
+                    <center>
+                        <p class="landing-section-font5">We want to hear from you. Contact us directly at <b>info@jando.com</b></p>
+                        <p class="landing-section-font5">or fill out the form and we will get back to you.</p>
+                    </center>
+                    <form name="userForm">
+                        <div layout-gt-sm="row">
+                            <md-input-container class="md-icon-float md-block" flex-gt-sm style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                                <!-- Use floating label instead of placeholder -->
+                                <label>Full name</label>
+                                <md-icon md-svg-src="jimg/svg/icon_form_name.svg" class="name"></md-icon>
+                                <input type="text" ng-model="ui.name" style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                            </md-input-container>
+                        </div>
+                        <div layout-gt-sm="row">
+                            <md-input-container class="md-icon-float md-block" flex-gt-sm style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                                <label>Email</label>
+                                <md-icon md-svg-src="jimg/svg/icon_form_email.svg" class="name"></md-icon>
+                                <input name="email" ng-model="ui.email" style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);"/>
+                            </md-input-container>
+                            <div flex="5" hide-xs hide-sm>
+                                <!-- Spacer //-->
+                            </div>
+                            <md-input-container class="md-icon-float md-block" flex-gt-sm style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                                <label>Phone Number</label>
+                                <md-icon md-svg-src="jimg/svg/icon_form_number.svg" class="name"></md-icon>
+                                <input name="phone" ng-model="ui.phone" style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);"/>
+                            </md-input-container>
+                        </div>
+                        <div layout-gt-sm="row">
+                            <md-input-container class="md-block" flex-gt-sm style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                                <!-- Use floating label instead of placeholder -->
+                                <label>Write your message</label>
+                                <input type="text" ng-model="ui.message" style="color:rgba(255,255,255,1); border-color:rgba(255,255,255,1);">
+                            </md-input-container>
+                        </div>
+                    </form>
+                    <div flex layout="row" layout-align="center" style="margin-bottom: 25px">
+                        <md-button class="btn3" ng-click="button_send()"><b>Send</b></md-button>
+                    </div>
+                </div>
+                <md-divider inset></md-divider>
+                <!-- <div>
+                    <p></p>
+                </div> -->
+
+                <md-toolbar md-scroll-shrink ng-if="true" class="transparent" hide-xs>
+                    <div class="md-toolbar-tools">
+                        <p class="footer-text"><span><a ng-href="tandc.html">Terms & Conditions</a></span> <span>&#8226; <a ng-href="privacy_policy.html">Privacy Policy </a></span> <span>&#8226; &copyJando.com 2016</span> </p>
+                        <span flex></span>
+                        <md-button class="md-icon-button" aria-label="More">
+                            <md-icon md-svg-icon="jimg/svg/icon_social_fb.svg"></md-icon>
+                        </md-button>
+                        <md-button class="md-icon-button" aria-label="More">
+                            <md-icon md-svg-icon="jimg/svg/icon_social_inst.svg"></md-icon>
+                        </md-button>
+                    </div>
+                </md-toolbar>
+
+
+
+                <md-toolbar md-scroll-shrink ng-if="true" class="transparent" layout-xs="column" show-xs hide-gt-xs>
+                    <center>
+                        <p class="footer-text">
+                            <span>
+                                <a ng-href="tandc.html" style="text-decoration: none; color: inherit;">
+                                    Terms & Conditions
+                                </a>
+                            </span>
+                            <br/> 
+                            <span> 
+                                <a ng-href="privacy_policy.html" style="text-decoration: none; color: inherit;">
+                                    Privacy Policy 
+                                </a>
+                            </span>
+                            <br/>
+                            <span> 
+                                &copy;Jando.com 2016
+                            </span> 
+                            </br>
+                            <span>
+                                <md-icon md-svg-icon="jimg/svg/icon_social_fb.svg"></md-icon>
+                            </span>
+                            <span>
+                                <md-icon md-svg-icon="jimg/svg/icon_social_inst.svg"></md-icon>
+                            </span>
+                        </p>
+                    </center>
+                </md-toolbar>
+            </div>
+            <div layout="column" class="section-background-image5 " flex>
+                <span flex><br><br></span>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="lib/angular.min.js"></script>
+    <script type="text/javascript" src="lib/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="lib/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="lib/angular-material/angular-material.min.js"></script>
+    <script type="text/javascript" src="lib/angular-route.min.js"></script>
+    <script type="text/javascript" src="lib/angular-scroll.js"></script>
+    <script type="text/javascript" src="lib/moment.min.js"></script>
+    <script type="text/javascript" src='lib/lodash.underscore.min.js'></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/lookups.js"></script>
+    <script type="text/javascript" src="src/landing/landing.js"></script>
+
+    <!--[if !IE]><!--><script>
+    if (/*@cc_on!@*/false) {
+        document.documentElement.className+=' ie10';
+    }
+    </script><!--<![endif]-->
+
+</body>
+
+</html>
